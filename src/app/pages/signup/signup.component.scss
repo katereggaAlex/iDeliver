@@ -1,0 +1,66 @@
+.cardheader {
+    text-align: "center";
+}
+.error{
+    color:red;
+    font-weight: 100;
+    font-size: 10px;
+}
+
+
+ion-button{
+    text-transform: capitalize;
+    --background: #5e08c0;
+}
+
+ion-col{
+    text-align: center;
+    padding:4px;
+    background: #5e08c0;
+    color:#fff;
+}
+
+
+
+.top{
+    text-align: center;
+    height:40vh;
+    background: #5e08c0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  
+    img{
+        height: 50px;
+    }
+  }
+
+
+  h2{
+    font-weight: 700;
+}
+
+small{
+  text-align: center;
+}
+
+
+
+.activeType{
+background: #fff !important;
+small{
+    color:#5e08c0 !important;
+}
+
+}
+
+.inactiveType{
+background: #5e08c0 !important;
+small{
+    color:#fff !important;
+}
+}
