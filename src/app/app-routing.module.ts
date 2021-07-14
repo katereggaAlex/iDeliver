@@ -6,6 +6,9 @@ import { ShopsComponent } from './pages/shops/shops.component';
 import { AddshopComponent } from './pages/addshop/addshop.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { OrdersComponent } from './pages/orders/orders.component';
+import { AboutshopsComponent } from './pages/aboutshops/aboutshops.component';
+import { TabBarsComponent } from './pages/tab-bars/tab-bars.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
@@ -15,7 +18,10 @@ const routes: Routes = [
   { path: 'shops', component:ShopsComponent },
   { path: 'products', component:ProductsComponent },
   { path: 'addshop', component:AddshopComponent },
-  { path: 'orders', component:OrdersComponent }
+  { path: 'orders', component:OrdersComponent },
+  { path: 'aboutshops', component:AboutshopsComponent },
+  {path:'tabs',component:TabBarsComponent},
+  {path:'gallery',component:GalleryComponent},
   
   
 ];
