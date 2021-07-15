@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
+import { Routes, RouterModule } from '@angular/router';
 
 import { ShopPage } from './shop.page';
+import { GalleryPage } from './gallery/gallery.page';
+import { ProductsPage } from './products/products.page';
+import { AboutshopPage } from './aboutshop/aboutshop.page';
+import { OrdersPage } from './orders/orders.page';
 
-import { GalleryPage } from '../gallery/gallery.page';
-import { AboutshopPage } from '../aboutshop/aboutshop.page';
-import { ProductsPage } from '../products/products.page';
 
 const routes: Routes = [
   {
@@ -45,6 +46,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'orders',
+        children: [
+          {
+            path: '',
+            component:OrdersPage
+          }
+        ]
+      },
+      {
        path: '',
        redirectTo: '/shop/products',
         pathMatch: 'full'
@@ -59,12 +69,16 @@ const routes: Routes = [
   }
 ];
 
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-     ],
-  declarations: [ShopPage]
+    RouterModule.forChild(routes),
+   
+  ],
+  declarations: [ShopPage,ProductsPage,OrdersPage,GalleryPage,AboutshopPage]
 })
 export class ShopPageModule {}
