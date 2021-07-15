@@ -4,11 +4,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ShopsComponent } from './pages/shops/shops.component';
 import { AddshopComponent } from './pages/addshop/addshop.component';
-import { ProductsComponent } from './pages/products/products.component';
-import { OrdersComponent } from './pages/orders/orders.component';
-import { AboutshopsComponent } from './pages/aboutshops/aboutshops.component';
-import { TabBarsComponent } from './pages/tab-bars/tab-bars.component';
-import { GalleryComponent } from './pages/gallery/gallery.component';
 
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
@@ -16,12 +11,29 @@ const routes: Routes = [
   { path: 'login', component:LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'shops', component:ShopsComponent },
-  { path: 'products', component:ProductsComponent },
   { path: 'addshop', component:AddshopComponent },
-  { path: 'orders', component:OrdersComponent },
-  { path: 'aboutshops', component:AboutshopsComponent },
-  {path:'tabs',component:TabBarsComponent},
-  {path:'gallery',component:GalleryComponent},
+  {
+    path: 'aboutshop',
+    loadChildren: () => import('./pages/aboutshop/aboutshop.module').then( m => m.AboutshopPageModule)
+  },
+  {
+    path: 'products',
+    loadChildren: () => import('./pages/products/products.module').then( m => m.ProductsPageModule)
+  },
+  {
+    path: 'gallery',
+    loadChildren: () => import('./pages/gallery/gallery.module').then( m => m.GalleryPageModule)
+  },
+  {
+    path: 'orders',
+    loadChildren: () => import('./pages/orders/orders.module').then( m => m.OrdersPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  
+
   
   
 ];
