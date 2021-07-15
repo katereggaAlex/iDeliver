@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TabBarsPage } from './tab-bars.page';
+import { TabsPage } from './tabs.page';
 import { GalleryPage } from '../gallery/gallery.page';
 import { AboutshopPage } from '../aboutshop/aboutshop.page';
 import { ProductsPage } from '../products/products.page';
@@ -13,7 +13,7 @@ import { ProductsPage } from '../products/products.page';
 const routes: Routes = [
   {
     path: '',
-    component: TabBarsPage,
+    component: TabsPage,
     children: [
       {
         path: 'gallery',
@@ -64,6 +64,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [TabBarsPage,AboutshopPage,GalleryPage,ProductsPage]
+  declarations: [TabsPage,AboutshopPage,GalleryPage,ProductsPage]
 })
-export class TabBarsPageModule {}
+export class TabsPageModule {}
