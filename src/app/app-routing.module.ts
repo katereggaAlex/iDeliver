@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from './pages/signup/signup.component';
 import { ShopsComponent } from './pages/shops/shops.component';
 import { AddshopComponent } from './pages/addshop/addshop.component';
 
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: '',redirectTo: 'home',pathMatch: 'full'},
-  { path: 'login', component:LoginComponent },
-  { path: 'signup', component: SignupComponent },
   { path: 'shops', component:ShopsComponent },
   { path: 'addshop', component:AddshopComponent },
   {
@@ -35,6 +31,14 @@ const routes: Routes = [
   {
     path: 'shop',
     loadChildren: () => import('./pages/shop/shop.module').then( m => m.ShopPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   
 
