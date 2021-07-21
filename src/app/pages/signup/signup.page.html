@@ -13,9 +13,19 @@
         <ion-label>Sign up as</ion-label>
         <ion-select ngModel  name="type" required>
           <ion-select-option  value="vender">Vender</ion-select-option>
-          <ion-select-option  value="client">Buyer</ion-select-option>
+          <ion-select-option  value="buyer">Buyer</ion-select-option>
         </ion-select>
       </ion-item>
+<ion-item>
+        <ion-label>Location</ion-label>
+        <ion-select ngModel  name="location" required>
+          <ion-select-option  value="Kampala">Kampala</ion-select-option>
+          <ion-select-option  value="Wakiso">Wakiso</ion-select-option>
+          <ion-select-option  value="Jinja">Jinja</ion-select-option>
+          <ion-select-option  value="Entebbe">Entebbe</ion-select-option>
+        </ion-select>
+      </ion-item>
+
 
       <ion-item>
         <ion-input type="text" ngModel  name="name" placeholder="Full name" required ></ion-input>
@@ -33,7 +43,7 @@
 
     </ion-list>
     <small class="error">{{error}}</small>
-    <ion-button  type="submit"  shape="round" style="color:white" expand="block"> Create Account </ion-button>
+    <ion-button  type="submit" [disabled]="btnDisabled" shape="round" style="color:white" expand="block"> {{btnText}} </ion-button>
      
   </form>
   <br/>
