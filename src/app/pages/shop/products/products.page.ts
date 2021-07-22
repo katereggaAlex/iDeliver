@@ -1,6 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { ToastController } from '@ionic/angular';
 import { ApiService } from '../../services/api.service';
 import { DataService } from '../../services/data.service';
 
@@ -22,7 +22,8 @@ export class ProductsPage implements OnInit {
   constructor(
     public data:DataService,
     public api:ApiService,
-    public afStorage:AngularFireStorage
+    public afStorage:AngularFireStorage,
+    public toast:ToastController
   ) {
 
    }
@@ -41,7 +42,7 @@ export class ProductsPage implements OnInit {
     const where =  {key: 'shop_id', value: this.shop.id };
     this.api._get('products', where).subscribe( data => {
       this.products = data.docs.map(doc => doc.data());
-      console.log(this.products)
+      // console.log(this.products)
     });
   }
 
@@ -63,6 +64,7 @@ export class ProductsPage implements OnInit {
           this.img = 'assets/icon/shop.jpg';
           if ( result.flag) {
               this.addBtnClicked();
+              this.presentToast()
               this.fetchProduct();
           } else {
             alert(result.error.message);
@@ -91,5 +93,13 @@ export class ProductsPage implements OnInit {
     return downloadURL;
   }
 
+  //method to create a toaster
+  async presentToast() {
+    const toast = await this.toast.create({
+      message: 'Product Successfully Added',
+      duration: 2000
+    });
+    toast.present();
+  }
 
 }
