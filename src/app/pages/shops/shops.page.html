@@ -2,7 +2,7 @@
   <ion-toolbar  color="primary" >
     <ion-title>Available Shops </ion-title>
     <ion-buttons slot="primary">
-        <ion-button  >
+        <ion-button (click)="goToOrders()" >
           <ion-icon slot="icon-only" name="calendar"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -11,7 +11,7 @@
 <!-- scrollable content -->
 
 <ion-content>
-  <ion-card *ngFor="let shop of shops" >
+  <ion-card *ngFor="let shop of shops"  (click)="visitShop(shop)" >
      <img [src]="shop.img"/>
      <ion-card-header>
       <ion-card-title>{{shop.name}}</ion-card-title>
