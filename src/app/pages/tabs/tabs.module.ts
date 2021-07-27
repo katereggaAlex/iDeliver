@@ -57,6 +57,8 @@ const routes: Routes = [
   }
 ];
 
+// ,,AboutshopPage,GalleryPage,ProductsPage
+
 @NgModule({
   imports: [
     CommonModule,
