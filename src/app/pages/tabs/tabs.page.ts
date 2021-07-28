@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tabs',
+  selector: 'app-tab-bars',
   templateUrl: './tabs.page.html',
   styleUrls: ['./tabs.page.scss'],
 })
