@@ -34,7 +34,7 @@
     "call-number": "^1.0.1",
     "cordova-plugin-splashscreen": "^6.0.0",
     "cordova-plugin-statusbar": "^2.4.3",
-    "firebase": "^8.7.1",
+    "firebase": "^10.9.0",
     "i": "^0.3.6",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
